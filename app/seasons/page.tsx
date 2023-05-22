@@ -1,73 +1,52 @@
 import React from 'react';
 
-const guestData = [
+const seasonData = [
   {
-    name: 'Guest 1',
-    appearances: [
-      {
-        ateAllHotSauces: true,
-        didLastDab: false,
-        season: 2,
-        episode: 10
-      },
-      {
-        ateAllHotSauces: true,
-        didLastDab: true,
-        season: 5,
-        episode: 3
-      }
-    ]
+    seasonNumber: 1,
+    numberOfEpisodes: 12,
+    startDate: 'March 12, 2015',
+    endDate: 'June 4, 2015'
   },
   {
-    name: 'Guest 2',
-    appearances: [
-      {
-        ateAllHotSauces: false,
-        didLastDab: true,
-        season: 4,
-        episode: 5
-      }
-    ]
+    seasonNumber: 2,
+    numberOfEpisodes: 18,
+    startDate: 'September 16, 2015',
+    endDate: 'January 6, 2016'
   },
   {
-    name: 'Guest 3',
-    appearances: [
-      {
-        ateAllHotSauces: true,
-        didLastDab: true,
-        season: 6,
-        episode: 3
-      },
-      {
-        ateAllHotSauces: false,
-        didLastDab: false,
-        season: 8,
-        episode: 7
-      }
-    ]
+    seasonNumber: 3,
+    numberOfEpisodes: 21,
+    startDate: 'March 3, 2016',
+    endDate: 'July 14, 2016'
+  },
+  {
+    seasonNumber: 4,
+    numberOfEpisodes: 24,
+    startDate: 'October 6, 2016',
+    endDate: 'March 30, 2017'
+  },
+  {
+    seasonNumber: 5,
+    numberOfEpisodes: 22,
+    startDate: 'June 1, 2017',
+    endDate: 'November 9, 2017'
   }
 ];
 
-const HotOnesGuestGallery = () => {
+const SeasonPage = () => {
   return (
     <div>
-      <h1>Hot Ones Guest Gallery</h1>
-      {guestData.map((guest, index) => (
+      <h1>Hot Ones Seasons</h1>
+      {seasonData.map((season, index) => (
         <div key={index}>
-          <h2>{guest.name}</h2>
-          <ul>
-            {guest.appearances.map((appearance, appearanceIndex) => (
-              <li key={appearanceIndex}>
-                <p>Hot Sauce Challenge: {appearance.ateAllHotSauces ? 'Yes' : 'No'}</p>
-                <p>Last Dab Challenge: {appearance.didLastDab ? 'Yes' : 'No'}</p>
-                <p>Season {appearance.season}, Episode {appearance.episode}</p>
-              </li>
-            ))}
-          </ul>
+          <h2>{`Season ${season.seasonNumber}`}</h2>
+          <p>Number of Episodes: {season.numberOfEpisodes}</p>
+          <p>Start Date: {season.startDate}</p>
+          <p>End Date: {season.endDate}</p>
         </div>
       ))}
     </div>
   );
 };
 
-export default HotOnesGuestGallery;
+export default SeasonPage;

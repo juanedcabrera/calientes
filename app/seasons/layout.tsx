@@ -1,6 +1,6 @@
 export const metadata = {
     title: 'Calientes | Hot One Guests',
-    description: 'Hot Ones Guest Page',
+    description: 'Hot Ones Seasons Page',
   };
   
   export default function TestingLayout({
