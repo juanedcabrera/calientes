@@ -1,11 +1,11 @@
 import Navbar from './navbar.jsx';
-
-
+import HelloWorld from './grids/page';
 
 const Home = () => {
   return (
     <main>
-      <Navbar/>
+      <Navbar />
+      <HelloWorld />
       <header className="bg-dark text-light py-6">
         <h1 className="text-center">Calientes 🌶️: The Hot Ones Fan Site</h1>
       </header>
@@ -13,7 +13,12 @@ const Home = () => {
       <section className="py-6">
         <div className="container">
           <h2>About Hot Ones</h2>
-          <p>Hot Ones is a popular web series hosted by Sean Evans, where he interviews celebrities while they eat increasingly spicy hot wings. The show has gained a massive following, and each episode features a different guest facing the heat of the hot sauce lineup.</p>
+          <p>
+            Hot Ones is a popular web series hosted by Sean Evans, where he
+            interviews celebrities while they eat increasingly spicy hot wings.
+            The show has gained a massive following, and each episode features a
+            different guest facing the heat of the hot sauce lineup.
+          </p>
         </div>
       </section>
 
@@ -78,28 +83,31 @@ const Home = () => {
           <h2>Explore Hot Sauces</h2>
           <p>Learn about the hot sauces used on Hot Ones:</p>
           <div className="grid grid-cols-3 gap-4">
-
             {/* Hot Sauce Cards */}
             <div className="card">
               <img src="[hot_sauce_image_url]" alt="[hot_sauce_name]" />
               <h3>[Hot Sauce Name]</h3>
               <p>[Description of the hot sauce]</p>
-              <a href="[hot_sauce_link]" className="btn">Read More</a>
+              <a href="[hot_sauce_link]" className="btn">
+                Read More
+              </a>
             </div>
 
             {/* Repeat for all hot sauces */}
-
           </div>
         </div>
       </section>
 
       <footer className="bg-dark text-light py-4">
         <div className="container">
-          <p>&copy; {new Date().getFullYear()} Calientes: Hot Ones Fan Site. All rights reserved.</p>
+          <p>
+            &copy; {new Date().getFullYear()} Calientes: Hot Ones Fan Site. All
+            rights reserved.
+          </p>
         </div>
       </footer>
     </main>
   );
-}
+};
 
 export default Home;
