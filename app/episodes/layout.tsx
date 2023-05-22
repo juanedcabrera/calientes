@@ -3,7 +3,7 @@ export const metadata = {
     description: 'Hot Ones Episodes Page',
   };
   
-  export default function TestingLayout({
+  export default function Layout({
     children,
   }: {
     children: React.ReactNode;

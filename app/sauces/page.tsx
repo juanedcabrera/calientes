@@ -1,4 +1,5 @@
 import React from 'react';
+import Navbar from '../navbar';
 
 const hotSauceData = [
   {
@@ -6,27 +7,28 @@ const hotSauceData = [
     scovilleLevel: '10,000 SHU',
     description: 'A medium heat hot sauce with a tangy flavor.',
     manufacturer: 'Sauce Company 1',
-    episodeAppearances: [2, 5, 9]
+    episodeAppearances: [2, 5, 9],
   },
   {
     name: 'Hot Sauce 2',
     scovilleLevel: '50,000 SHU',
     description: 'A fiery hot sauce with a smoky and sweet taste.',
     manufacturer: 'Sauce Company 2',
-    episodeAppearances: [4, 7, 12]
+    episodeAppearances: [4, 7, 12],
   },
   {
     name: 'Hot Sauce 3',
     scovilleLevel: '100,000 SHU',
     description: 'An intensely hot sauce with a citrusy kick.',
     manufacturer: 'Sauce Company 3',
-    episodeAppearances: [6, 11, 14]
-  }
+    episodeAppearances: [6, 11, 14],
+  },
 ];
 
 const HotSaucePage = () => {
   return (
     <div>
+      <Navbar />
       <h1>Hot Sauce Showcase</h1>
       {hotSauceData.map((hotSauce, index) => (
         <div key={index}>

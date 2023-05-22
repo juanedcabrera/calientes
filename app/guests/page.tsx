@@ -1,4 +1,5 @@
 import React from 'react';
+import Navbar from '../navbar';
 
 const guestData = [
   {
@@ -8,15 +9,15 @@ const guestData = [
         ateAllHotSauces: true,
         didLastDab: false,
         season: 2,
-        episode: 10
+        episode: 10,
       },
       {
         ateAllHotSauces: true,
         didLastDab: true,
         season: 5,
-        episode: 3
-      }
-    ]
+        episode: 3,
+      },
+    ],
   },
   {
     name: 'Guest 2',
@@ -25,9 +26,9 @@ const guestData = [
         ateAllHotSauces: false,
         didLastDab: true,
         season: 4,
-        episode: 5
-      }
-    ]
+        episode: 5,
+      },
+    ],
   },
   {
     name: 'Guest 3',
@@ -36,21 +37,22 @@ const guestData = [
         ateAllHotSauces: true,
         didLastDab: true,
         season: 6,
-        episode: 3
+        episode: 3,
       },
       {
         ateAllHotSauces: false,
         didLastDab: false,
         season: 8,
-        episode: 7
-      }
-    ]
-  }
+        episode: 7,
+      },
+    ],
+  },
 ];
 
 const HotOnesGuestGallery = () => {
   return (
     <div>
+      <Navbar />
       <h1>Hot Ones Guest Gallery</h1>
       {guestData.map((guest, index) => (
         <div key={index}>
@@ -58,9 +60,16 @@ const HotOnesGuestGallery = () => {
           <ul>
             {guest.appearances.map((appearance, appearanceIndex) => (
               <li key={appearanceIndex}>
-                <p>Hot Sauce Challenge: {appearance.ateAllHotSauces ? 'Yes' : 'No'}</p>
-                <p>Last Dab Challenge: {appearance.didLastDab ? 'Yes' : 'No'}</p>
-                <p>Season {appearance.season}, Episode {appearance.episode}</p>
+                <p>
+                  Hot Sauce Challenge:{' '}
+                  {appearance.ateAllHotSauces ? 'Yes' : 'No'}
+                </p>
+                <p>
+                  Last Dab Challenge: {appearance.didLastDab ? 'Yes' : 'No'}
+                </p>
+                <p>
+                  Season {appearance.season}, Episode {appearance.episode}
+                </p>
               </li>
             ))}
           </ul>

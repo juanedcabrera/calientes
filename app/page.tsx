@@ -1,8 +1,12 @@
 import React from 'react';
+import Navbar from './navbar.jsx';
+
+
 
 const Home = () => {
   return (
     <main>
+      <Navbar/>
       <header className="bg-dark text-light py-6">
         <h1 className="text-center">Calientes 🌶️: The Hot Ones Fan Site</h1>
       </header>
