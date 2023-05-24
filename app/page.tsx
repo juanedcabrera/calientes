@@ -1,7 +1,72 @@
-import Navbar from './navbar.jsx';
+import Navbar from './navbar';
 import HelloWorld from './grids/page';
+import styles from './page.module.css';
 
-const Home = () => {
+
+type Guests = {
+  _id: string;
+  name: string;
+  profession: string;
+  img: string;
+  wallOfFlame: boolean;
+  wallOfShame: boolean;
+  episodes: string[];
+  likes: number;
+  totalWingsEaten: number;
+  createdAt: string;
+  updatedAt: string;
+};
+
+type Episode = {
+  _id: string;
+  title: string;
+  season: string;
+  overallEpisodeNumber: string;
+  seasonEpisodeNumber: string;
+  airDate: string;
+  guests: string[];
+  sauces: string[];
+  success: boolean;
+  guestDab: boolean;
+  likes: number;
+  carefulCount: number;
+  createdAt: string;
+  updatedAt: string;
+};
+
+const getGuests: () => Promise<{ guests: Guests[] }> = async () => {
+  const res = await fetch('http://localhost:8000/api-v1/guests');
+  if (!res.ok) {
+    // This will activate the closest `error.js` Error Boundary
+    throw new Error('Failed to fetch data');
+  }
+  return res.json();
+};
+
+const getEpisodes: () => Promise<{ episodes: Episode[] }> = async () => {
+  const res = await fetch('http://localhost:8000/api-v1/episodes');
+  if (!res.ok) {
+    // This will activate the closest `error.js` Error Boundary
+    throw new Error('Failed to fetch data');
+  }
+  return res.json();
+};
+
+const Home = async () => {
+  const { guests } = await getGuests();
+  const { episodes } = await getEpisodes();
+  console.log(guests);
+
+  function getRandomGuests(guests: any[], count: any) {
+    const shuffledGuests = guests.sort(() => 0.5 - Math.random());
+    return shuffledGuests.slice(0, count);
+  }
+
+  function getRandomEpisodes(episodes: any[], count: any) {
+    const shuffledEpisodes = episodes.sort(() => 0.5 - Math.random());
+    return shuffledEpisodes.slice(0, count);
+  }
+
   return (
     <main>
       <Navbar />
@@ -41,12 +106,13 @@ const Home = () => {
         <div className="container">
           <h2>Guests</h2>
           <p>Discover the celebrities who have appeared on Hot Ones:</p>
-          <ul>
-            <li>[Guest Name 1]</li>
-            <li>[Guest Name 2]</li>
-            <li>[Guest Name 3]</li>
-            {/* Add more guest names as needed */}
-          </ul>
+          {getRandomGuests(guests, 3).map((guest, index) => (
+            <ul>
+              <li>Name: {guest.name}</li>
+              <li>Profession: {guest.profession}</li>
+              {/* Add more guest names as needed */}
+            </ul>
+          ))}
         </div>
       </section>
 
@@ -54,27 +120,27 @@ const Home = () => {
         <div className="container">
           <h2>Seasons and Episodes</h2>
           <p>Explore the different seasons and episodes of Hot Ones:</p>
-          <ul>
-            <li>
-              <h3>Season 1</h3>
-              <ul>
-                <li>Episode 1 - [Episode Title]</li>
-                <li>Episode 2 - [Episode Title]</li>
-                <li>Episode 3 - [Episode Title]</li>
-                {/* Add more episodes */}
-              </ul>
-            </li>
-            <li>
-              <h3>Season 2</h3>
-              <ul>
-                <li>Episode 1 - [Episode Title]</li>
-                <li>Episode 2 - [Episode Title]</li>
-                <li>Episode 3 - [Episode Title]</li>
-                {/* Add more episodes */}
-              </ul>
-            </li>
-            {/* Add more seasons */}
-          </ul>
+          <div>
+            <h3>Season 1</h3>
+            <ul>
+              {getRandomEpisodes(episodes, 3).map((episode, index) => (
+                <li key={index}>
+                  Season: {episode.season} Episode: {episode.seasonEpisodeNumber} - {episode.title}
+                </li>
+              ))}
+            </ul>
+          </div>
+          <div>
+            <h3>Season 2</h3>
+            <ul>
+              {/* Add episodes for Season 2 */}
+              <li>Episode 1 - [Episode Title]</li>
+              <li>Episode 2 - [Episode Title]</li>
+              <li>Episode 3 - [Episode Title]</li>
+              {/* Add more episodes */}
+            </ul>
+          </div>
+          {/* Add more seasons */}
         </div>
       </section>
 

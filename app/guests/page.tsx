@@ -1,81 +1,46 @@
-import Navbar from '../navbar';
+import Navbar from '../navbar.jsx';
+import styles from './page.module.css'
 
-const guestData = [
-  {
-    name: 'Guest 1',
-    appearances: [
-      {
-        ateAllHotSauces: true,
-        didLastDab: false,
-        season: 2,
-        episode: 10,
-      },
-      {
-        ateAllHotSauces: true,
-        didLastDab: true,
-        season: 5,
-        episode: 3,
-      },
-    ],
-  },
-  {
-    name: 'Guest 2',
-    appearances: [
-      {
-        ateAllHotSauces: false,
-        didLastDab: true,
-        season: 4,
-        episode: 5,
-      },
-    ],
-  },
-  {
-    name: 'Guest 3',
-    appearances: [
-      {
-        ateAllHotSauces: true,
-        didLastDab: true,
-        season: 6,
-        episode: 3,
-      },
-      {
-        ateAllHotSauces: false,
-        didLastDab: false,
-        season: 8,
-        episode: 7,
-      },
-    ],
-  },
-];
+type Guests = {
+  _id: string;
+  name: string;
+  profession: string;
+  img: string;
+  wallOfFlame: boolean;
+  wallOfShame: boolean;
+  episodes: string[];
+  likes: number;
+  totalWingsEaten: number;
+  createdAt: string;
+  updatedAt: string;
+};
 
-const HotOnesGuestGallery = () => {
+const getGuests: () => Promise<{ guests: Guests[] }> = async () => {
+  const res = await fetch('http://localhost:8000/api-v1/guests');
+  if (!res.ok) {
+    // This will activate the closest `error.js` Error Boundary
+    throw new Error('Failed to fetch data');
+  }
+  return res.json();
+};
+
+const GuestPage = async () => {
+  const { guests } = await getGuests();
+  console.log(guests);
+
   return (
     <div>
       <Navbar />
-      <h1>Hot Ones Guest Gallery</h1>
-      {guestData.map((guest, index) => (
-        <div key={index}>
-          <h2>{guest.name}</h2>
-          <ul>
-            {guest.appearances.map((appearance, appearanceIndex) => (
-              <li key={appearanceIndex}>
-                <p>
-                  Hot Sauce Challenge:{' '}
-                  {appearance.ateAllHotSauces ? 'Yes' : 'No'}
-                </p>
-                <p>
-                  Last Dab Challenge: {appearance.didLastDab ? 'Yes' : 'No'}
-                </p>
-                <p>
-                  Season {appearance.season}, Episode {appearance.episode}
-                </p>
-              </li>
-            ))}
-          </ul>
+      <h1>Hot Ones Guests</h1>
+      {guests.map((guest, index) => (
+        <div key={index} className={styles.main}>
+          <h2>{`Name ${guest.name}, Profession ${guest.profession} - ${guest.episodes}`}</h2>
+          <p>Wall of Flame: {guest.wallOfFlame}</p>
+          <p>Total Wings Eaten: {guest.totalWingsEaten}</p>
         </div>
       ))}
     </div>
   );
 };
 
-export default HotOnesGuestGallery;
+export default GuestPage;
