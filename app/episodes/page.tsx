@@ -33,9 +33,6 @@ const getEpisodes: () => Promise<{ episodes: Episode[] }> = async () => {
 const EpisodePage = async () => {
   const { episodes } = await getEpisodes();
 
-
-
-
   return (
     <div>
       <Navbar />
