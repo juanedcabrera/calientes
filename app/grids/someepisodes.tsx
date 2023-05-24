@@ -1,7 +1,6 @@
 'use client'
 import React, { useEffect, useRef } from "react";
 import { Grid } from "gridjs";
-import "gridjs/dist/theme/mermaid.css";
 
 // type definition
 type Episode = {
@@ -53,8 +52,9 @@ const SomeEpisodesGrid = () => {
         const grid = new Grid({
           columns: ["Title", "Season", "Episode Number"],
           data: mappedEpisodes,
+          sort:true,
+          resizable:true,
         });
-
         grid.render(wrapperRef.current);
       });
     }
