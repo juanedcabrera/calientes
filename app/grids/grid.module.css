@@ -1,0 +1,25 @@
+
+  /* Add mobile-friendly styles */
+  
+  @media (max-width: 768px) {
+    .gridjs-wrapper {
+      overflow-x: auto;
+    }
+    table.gridjs-table {
+      max-width: 100%;
+      width: auto;
+    }
+    .gridjs-td,
+    th.gridjs-th {
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    .gridjs-mobile-data {
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      max-width: 100%;
+      display: inline-block;
+    }
+  }

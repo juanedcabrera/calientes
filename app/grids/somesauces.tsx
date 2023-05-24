@@ -41,15 +41,17 @@ const SaucesGrid = () => {
         const mappedSauces = getRandomSauces(sauces, 5).map((sauce) => [
           sauce.name,
           sauce.scoville,
-          sauce.description,
+          sauce.manufacturer,
         ]);
 
         const grid = new Grid({
-          columns: ["Name", "Scoville", "Description"],
+          columns: ["Name", "Scoville", "Manufacturer"],
           data: mappedSauces,
         });
 
-        grid.render(wrapperRef.current);
+        if (wrapperRef.current) {
+          grid.render(wrapperRef.current);
+        }
       });
     }
   }, []);

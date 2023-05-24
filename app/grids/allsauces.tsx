@@ -43,7 +43,9 @@ const SaucesGrid = () => {
           data: mappedSauces,
         });
 
-        grid.render(wrapperRef.current);
+        if (wrapperRef.current) {
+          grid.render(wrapperRef.current);
+        }
       });
     }
   }, []);
