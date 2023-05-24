@@ -33,16 +33,15 @@ const getEpisodes: () => Promise<{ episodes: Episode[] }> = async () => {
 const EpisodePage = async () => {
   const { episodes } = await getEpisodes();
 
-
-
-
   return (
     <div>
       <Navbar />
       <h1>Hot Ones Episodes</h1>
       {episodes.map((episode, index) => (
         <div key={index}>
-          <h2>{`Season ${episode.seasonNumber}, Episode ${episode.seasonEpisodeNumber} - ${episode.title}`}</h2>
+          <a href={`./episodes/${episode._id}`}>
+            <h2>{`Season ${episode.seasonNumber}, Episode ${episode.seasonEpisodeNumber} - ${episode.title}`}</h2>
+          </a>
           <p>Guests: {episode.guests}</p>
           <p>Air Date: {episode.airDate}</p>
           {/* <p>Sauces Mentioned: {episode.sauces.join(', ')}</p> */}
