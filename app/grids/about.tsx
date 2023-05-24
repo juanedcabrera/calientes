@@ -1,6 +1,7 @@
 'use client'
 import React, { useEffect } from 'react';
 import { Grid } from 'gridjs';
+import './grid.module.css';
 import 'gridjs/dist/theme/mermaid.css';
 
 const AboutGrid = () => {

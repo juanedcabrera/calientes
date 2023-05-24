@@ -55,7 +55,9 @@ const SomeEpisodesGrid = () => {
           sort:true,
           resizable:true,
         });
-        grid.render(wrapperRef.current);
+        if (wrapperRef.current) {
+          grid.render(wrapperRef.current);
+        }
       });
     }
   }, []);
