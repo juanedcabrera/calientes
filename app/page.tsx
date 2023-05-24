@@ -1,7 +1,7 @@
 import Navbar from './navbar';
-import HelloWorld from './grids/page';
 import styles from './page.module.css';
-
+import SomeGuestsGrid from './grids/someguests';
+import SomeEpisodesGrid from './grids/someepisodes';
 
 type Guests = {
   _id: string;
@@ -68,13 +68,13 @@ const Home = async () => {
   }
 
   return (
-    <main>
+    <main className={styles.main}>
       <Navbar />
-      <HelloWorld />
       <header className="bg-dark text-light py-6">
         <h1 className="text-center">Calientes 🌶️: The Hot Ones Fan Site</h1>
       </header>
-
+      <SomeGuestsGrid />
+      <SomeEpisodesGrid />
       <section className="py-6">
         <div className="container">
           <h2>About Hot Ones</h2>
@@ -125,7 +125,8 @@ const Home = async () => {
             <ul>
               {getRandomEpisodes(episodes, 3).map((episode, index) => (
                 <li key={index}>
-                  Season: {episode.season} Episode: {episode.seasonEpisodeNumber} - {episode.title}
+                  Season: {episode.season} Episode:{' '}
+                  {episode.seasonEpisodeNumber} - {episode.title}
                 </li>
               ))}
             </ul>
