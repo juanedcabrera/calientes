@@ -1,7 +1,6 @@
 'use client'
 import React, { useEffect, useRef } from "react";
 import { Grid } from "gridjs";
-import "gridjs/dist/theme/mermaid.css";
 
 type Guests = {
   _id: string;
@@ -26,7 +25,7 @@ const getGuests: () => Promise<{ guests: Guests[] }> = async () => {
   return res.json();
 };
 
-const GuestGrid = () => {
+const AllGuestsGrid = () => {
   const wrapperRef = useRef<HTMLDivElement | null>(null);
 
   useEffect(() => {
@@ -50,4 +49,4 @@ const GuestGrid = () => {
   return <div ref={wrapperRef} />;
 };
 
-export default GuestGrid;
+export default AllGuestsGrid;

@@ -1,7 +1,7 @@
 'use client'
 import React, { useEffect, useRef } from "react";
 import { Grid } from "gridjs";
-import "gridjs/dist/theme/mermaid.css";
+
 
 type Guests = {
   _id: string;

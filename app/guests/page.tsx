@@ -1,5 +1,7 @@
+'use client'
 import Navbar from '../navbar.jsx';
 import styles from './page.module.css'
+import AllGuestsGrid from '../grids/allguests';
 
 type Guests = {
   _id: string;
@@ -32,13 +34,7 @@ const GuestPage = async () => {
     <div>
       <Navbar />
       <h1>Hot Ones Guests</h1>
-      {guests.map((guest, index) => (
-        <div key={index} className={styles.main}>
-          <h2>{`Name ${guest.name}, Profession ${guest.profession} - ${guest.episodes}`}</h2>
-          <p>Wall of Flame: {guest.wallOfFlame}</p>
-          <p>Total Wings Eaten: {guest.totalWingsEaten}</p>
-        </div>
-      ))}
+      <AllGuestsGrid/>
     </div>
   );
 };

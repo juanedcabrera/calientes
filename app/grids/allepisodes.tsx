@@ -1,7 +1,7 @@
 'use client'
-import React, { useEffect, useRef } from "react";
-import { Grid } from "gridjs";
-import "gridjs/dist/theme/mermaid.css";
+
+import React, { useEffect, useRef } from 'react';
+import { Grid } from 'gridjs';
 
 // type definition
 type Episode = {
@@ -23,18 +23,18 @@ type Episode = {
 };
 
 // asynchronous function to fetch episodes
-const getEpisodes: () => Promise<{ episodes: Episode[] }> = async () => {
-  const res = await fetch("http://localhost:8000/api-v1/episodes");
+const getEpisodes = async (): Promise<{ episodes: Episode[] }> => {
+  const res = await fetch('http://localhost:8000/api-v1/episodes');
   if (!res.ok) {
     // This will activate the closest `error.js` Error Boundary
-    throw new Error("Failed to fetch data");
+    throw new Error('Failed to fetch data');
   }
   return res.json();
 };
 
 // EpisodesGrid component
 const EpisodesGrid = () => {
-  const wrapperRef = useRef<HTMLDivElement | null>(null);
+  const wrapperRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     if (wrapperRef.current) {
@@ -46,16 +46,18 @@ const EpisodesGrid = () => {
         ]);
 
         const grid = new Grid({
-          columns: ["Title", "Season", "Episode Number"],
+          columns: ['Title', 'Season', 'Episode Number'],
           data: mappedEpisodes,
         });
 
-        grid.render(wrapperRef.current);
+        if (wrapperRef.current) {
+          grid.render(wrapperRef.current);
+        }
       });
     }
   }, []);
 
-  return <div ref={wrapperRef} />;
+  return <div ref={wrapperRef}></div>;
 };
 
 export default EpisodesGrid;
