@@ -3,7 +3,8 @@ import Navbar from '../../navbar';
 type Season = {
   _id: string;
   seasonNumber: number;
-  episodes: string[];
+  episodeIds: string[];
+  episodeTitles: string[];
   likes: number;
   startDate: string;
   endDate: string;
@@ -43,7 +44,7 @@ const SeasonPage: ({}: Params) => Promise<{}> = async ({ params }) => {
       <p style={{ fontSize: '20px' }}>Start Date: {season.startDate}</p>
       <p style={{ fontSize: '20px' }}>End Date: {season.endDate}</p>
       <h2 style={{ fontSize: '60px' }}>Episodes: </h2>
-      {season.episodes.map((episode, index) => (
+      {season.episodeTitles.map((episode, index) => (
         <p style={{ fontSize: '20px' }} key={index}>{episode}</p>
       ))}
       </div>

@@ -4,7 +4,8 @@ import AllSeasonsGrid from '../grids/allseasons';
 type Season = {
   _id: string;
   seasonNumber: number;
-  episodes: string[];
+  episodeIds: string[];
+  episodeTitles: string[];
   likes: number;
   startDate: string;
   endDate: string;
