@@ -50,8 +50,8 @@ const SomeSaucesGrid = () => {
             sauce[1],
             sauce[2],
           ]),
-          sort:true,
-          resizable:true,
+          sort: true,
+          resizable: true,
         });
 
         if (wrapperRef.current) {

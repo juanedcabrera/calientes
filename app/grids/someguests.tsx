@@ -48,8 +48,8 @@ const SomeGuestsGrid = () => {
             html(`<a href="guests/${guest[2]}">${guest[0]}</a>`),
             guest[1],
           ]),
-          sort:true,
-          resizable:true,
+          sort: true,
+          resizable: true,
         });
 
         if (wrapperRef.current) {

@@ -1,6 +1,6 @@
-'use client'
-import React, { useEffect, useRef } from "react";
-import { Grid } from "gridjs";
+'use client';
+import React, { useEffect, useRef } from 'react';
+import { Grid, html } from 'gridjs';
 import './grid.module.css';
 import 'gridjs/dist/theme/mermaid.css';
 
@@ -19,10 +19,10 @@ type Guests = {
 };
 
 const getGuests: () => Promise<{ guests: Guests[] }> = async () => {
-  const res = await fetch("http://localhost:8000/api-v1/guests");
+  const res = await fetch('http://localhost:8000/api-v1/guests');
   if (!res.ok) {
     // This will activate the closest `error.js` Error Boundary
-    throw new Error("Failed to fetch data");
+    throw new Error('Failed to fetch data');
   }
   return res.json();
 };
@@ -36,14 +36,18 @@ const AllGuestsGrid = () => {
         const mappedGuests = guests.map((guest) => [
           guest.name,
           guest.profession,
+          guest._id,
         ]);
 
         const grid = new Grid({
-          columns: ["Name", "Profession"],
-          data: mappedGuests,
-          sort:true,
-          resizable:true,
-          search:true,
+          columns: ['Name', 'Profession'],
+          data: mappedGuests.map((guest) => [
+            html(`<a href="guests/${guest[2]}">${guest[0]}</a>`),
+            guest[1],
+          ]),
+          sort: true,
+          resizable: true,
+          search: true,
         });
 
         if (wrapperRef.current) {
