@@ -2,7 +2,7 @@ import Link from 'next/link';
 
 const Navbar = () => {
   return (
-    <nav style={{ position: 'fixed', top: 0, width: '100%', background: '#f0f0f0', padding: '10px' }}>
+    <nav style={{top: 0, width: '100%', padding: '10px', marginBottom: '2rem'}}>
       <Link href="/">Home</Link>
       {' | '}
       <Link href="/guests">Guests</Link>
