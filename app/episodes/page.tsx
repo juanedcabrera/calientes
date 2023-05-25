@@ -1,4 +1,5 @@
 import Navbar from '../navbar';
+import AllEpisodesGrid from '../grids/allepisodes';
 
 type Episode = {
   _id: string;
@@ -37,16 +38,7 @@ const EpisodePage = async () => {
     <div>
       <Navbar />
       <h1>Hot Ones Episodes</h1>
-      {episodes.map((episode, index) => (
-        <div key={index}>
-          <a href={`./episodes/${episode._id}`}>
-            <h2>{`Season ${episode.seasonNumber}, Episode ${episode.seasonEpisodeNumber} - ${episode.title}`}</h2>
-          </a>
-          <p>Guests: {episode.guests}</p>
-          <p>Air Date: {episode.airDate}</p>
-          {/* <p>Sauces Mentioned: {episode.sauces.join(', ')}</p> */}
-        </div>
-      ))}
+      <AllEpisodesGrid />
     </div>
   );
 };

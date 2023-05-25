@@ -9,17 +9,20 @@ const FunFactsGrid = () => {
       data: [
         [
           html(
-            "<div'>" +
-            "<li>There are only 10 episodes in which more than 1 guest attended.</li>" +
-            "<li>The show only got 1 sponsor from Complex when it was pitched.</li>" +
-            "<li>Juan and Andrew spent more time fixing data than writing code.</li>" +
-            "<li>A true test of friendship is when you both whole heartedly disagree.</li>" +
-            "<li>Please hire us</li>" +
-            '</div>'
+            "<div>" +
+              "<li>There are only 10 episodes in which more than 1 guest attended.</li>" +
+              "<li>The show only got 1 sponsor from Complex when it was pitched - Donnie Kwak.</li>" +
+              "<li>The normal season is 12 episodes but Season 2 has close to 40 episodes.</li>" +
+              "<li>The Gordon Ramsey episode in 2019 has more than double the amount of views of the next episode.</li>" +
+              "<li>While Da'Bomb Beyond Insanity is the sauce used in the most episodes (276), Hot Ones Fiery Chipotle comes in second place (101).</li>" +
+              '<li>You can hire us - <a href="https://github.com/juanedcabrera"/>Juan</a> and <a href="https://github.com/continentaldivide"/>Andrew</a></li>' +
+            "</div>"
           ),
         ],
       ],
     });
+  
+  
 
     const container = document.getElementById('Fun-facts-container');
     if (container) {

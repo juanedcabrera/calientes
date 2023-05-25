@@ -1,4 +1,5 @@
 import Navbar from '../navbar';
+import AllSeasonsGrid from '../grids/allseasons';
 
 type Season = {
   _id: string;
@@ -27,14 +28,7 @@ const SeasonPage = async () => {
     <div>
       <Navbar />
       <h1>Hot Ones Seasons</h1>
-      {seasons.map((season, index) => (
-        <div key={index}>
-          <h2>{`Season ${season.seasonNumber}`}</h2>
-          <p>Number of Episodes: {season.episodes.length}</p>
-          <p>Start Date: {season.startDate}</p>
-          <p>End Date: {season.endDate}</p>
-        </div>
-      ))}
+      <AllSeasonsGrid />
     </div>
   );
 };
