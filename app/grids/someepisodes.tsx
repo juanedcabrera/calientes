@@ -13,10 +13,13 @@ type Episode = {
   airDate: string;
   guests: string[];
   sauces: string[];
+  wingsGuestCompleted: number;
   success: boolean;
   guestDab: boolean;
   likes: number;
   carefulCount: number;
+  image: string;
+  thumbnailImage: string;
   createdAt: string;
   updatedAt: string;
 };
