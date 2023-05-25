@@ -41,8 +41,11 @@ const SaucePage: ({}: Params) => Promise<{}> = async ({ params }) => {
   return (
     <div>
       <Navbar />
-      <div>
-        <h1>{sauce.name}</h1>
+      <div style={{ transition:'.3s', borderRadius:'5px', backgroundColor:'white', width: '35em'}}>
+        <h1 style={{ fontSize:'80px' }}>{sauce.name}</h1>
+        <h3 style={{ fontSize:'20px' }}>Manufacturer: {sauce.manufacturer}</h3>  
+        <p style={{ fontSize:'20px'}}>Description: {sauce.description}</p>     
+        <p style={{ fontSize:'20px', fontWeight:'bold' }}>Scoville: {sauce.scoville}</p>  
       </div>
     </div>
   );

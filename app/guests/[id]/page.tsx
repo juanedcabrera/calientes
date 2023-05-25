@@ -1,4 +1,5 @@
 import Navbar from '../../navbar';
+import style from './page.module.css';
 
 type Guest = {
   _id: string;
@@ -44,8 +45,12 @@ const GuestPage: ({}: Params) => Promise<{}> = async ({ params }) => {
   return (
     <div>
       <Navbar />
-      <div>
-        <h1>{guest.name}</h1>
+      <div style={{ transition:'.3s', borderRadius:'5px', backgroundColor:'white', width: '35em'}}>
+        <h1 style={{ fontSize:'100px' }}>{guest.name}</h1>
+        <h2 style={{ fontSize:'60px' }}>{guest.profession}</h2>
+        <p>{guest.episodes}</p>
+        <p style={{ fontSize:'20px' }}>Episode Dates: {guest.episodeDates}</p>
+        <p style={{ fontSize:'20px' }}>Total Wings Eaten: {guest.totalWingsEaten}</p>     
       </div>
     </div>
   );
