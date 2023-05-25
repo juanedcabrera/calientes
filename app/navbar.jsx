@@ -2,21 +2,14 @@ import Link from 'next/link';
 
 const Navbar = () => {
   return (
-    <nav>
-      <ul>
-        <li>
-          <Link href="/">Home</Link>
-        </li>
-        <li>
-          <Link href="/guests">Guests</Link>
-        </li>
-        <li>
-          <Link href="/sauces">Hot Sauces</Link>
-        </li>
-        <li>
-          <Link href="/seasons">Seasons</Link>
-        </li>
-      </ul>
+    <nav style={{ position: 'fixed', top: 0, width: '100%', background: '#f0f0f0', padding: '10px' }}>
+      <Link href="/">Home</Link>
+      {' | '}
+      <Link href="/guests">Guests</Link>
+      {' | '}
+      <Link href="/sauces">Hot Sauces</Link>
+      {' | '}
+      <Link href="/seasons">Seasons</Link>
     </nav>
   );
 };

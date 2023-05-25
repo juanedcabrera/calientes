@@ -2,6 +2,8 @@
 
 import React, { useEffect, useRef } from 'react';
 import { Grid } from 'gridjs';
+import './grid.module.css';
+import 'gridjs/dist/theme/mermaid.css';
 
 // type definition
 type Episode = {
@@ -48,6 +50,9 @@ const EpisodesGrid = () => {
         const grid = new Grid({
           columns: ['Title', 'Season', 'Episode Number'],
           data: mappedEpisodes,
+          sort:true,
+          resizable:true,
+          search:true,
         });
 
         if (wrapperRef.current) {
