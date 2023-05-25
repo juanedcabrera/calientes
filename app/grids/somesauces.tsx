@@ -30,7 +30,7 @@ const getSauces: () => Promise<{ sauces: Sauce[] }> = async () => {
 };
 
 // EpisodesGrid component
-const SaucesGrid = () => {
+const SomeSaucesGrid = () => {
   const wrapperRef = useRef<HTMLDivElement | null>(null);
 
   useEffect(() => {
@@ -64,4 +64,4 @@ const SaucesGrid = () => {
   return <div ref={wrapperRef} />;
 };
 
-export default SaucesGrid;
+export default SomeSaucesGrid;
