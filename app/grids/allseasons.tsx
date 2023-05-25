@@ -7,7 +7,8 @@ import 'gridjs/dist/theme/mermaid.css';
 type Season = {
   _id: string;
   seasonNumber: number;
-  episodes: string[];
+  episodeIds: string[];
+  episodeTitles: string[];
   likes: number;
   startDate: string;
   endDate: string;
@@ -64,7 +65,7 @@ const AllSeasonsGrid = () => {
           season.seasonNumber,
           season.startDate,
           season.endDate,
-          season.episodes,
+          season.episodeTitles,
           season._id,
         ]);
 
