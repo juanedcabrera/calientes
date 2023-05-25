@@ -1,9 +1,8 @@
-'use client'
-import React, { useEffect, useRef } from "react";
-import { Grid } from "gridjs";
+'use client';
+import React, { useEffect, useRef } from 'react';
+import { Grid, html } from 'gridjs';
 
-
-type Guests = {
+type Guest = {
   _id: string;
   name: string;
   profession: string;
@@ -17,16 +16,16 @@ type Guests = {
   updatedAt: string;
 };
 
-function getRandomGuests(guests: any[], count: any) {
+function getRandomGuests(guests: Guest[], count: number) {
   const shuffledGuests = guests.sort(() => 0.5 - Math.random());
   return shuffledGuests.slice(0, count);
 }
 
-const getGuests: () => Promise<{ guests: Guests[] }> = async () => {
-  const res = await fetch("http://localhost:8000/api-v1/guests");
+const getGuests: () => Promise<{ guests: Guest[] }> = async () => {
+  const res = await fetch('http://localhost:8000/api-v1/guests');
   if (!res.ok) {
     // This will activate the closest `error.js` Error Boundary
-    throw new Error("Failed to fetch data");
+    throw new Error('Failed to fetch data');
   }
   return res.json();
 };
@@ -40,11 +39,15 @@ const SomeGuestsGrid = () => {
         const mappedGuests = getRandomGuests(guests, 5).map((guest) => [
           guest.name,
           guest.profession,
+          guest._id,
         ]);
 
         const grid = new Grid({
-          columns: ["Name", "Profession"],
-          data: mappedGuests,
+          columns: ['Name', 'Profession'],
+          data: mappedGuests.map((guest) => [
+            html(`<a href="guests/${guest[2]}">${guest[0]}</a>`),
+            guest[1],
+          ]),
         });
 
         if (wrapperRef.current) {

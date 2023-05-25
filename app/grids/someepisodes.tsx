@@ -31,7 +31,7 @@ const getEpisodes: () => Promise<{ episodes: Episode[] }> = async () => {
   return res.json();
 };
 
-function getRandomEpisodes(episodes: any[], count: any) {
+function getRandomEpisodes(episodes: Episode[], count: number) {
   const shuffledEpisodes = episodes.sort(() => 0.5 - Math.random());
   return shuffledEpisodes.slice(0, count);
 }
