@@ -1,4 +1,5 @@
 import Navbar from '../../navbar';
+import style from './page.module.css';
 
 type Episode = {
   _id: string;
@@ -47,12 +48,11 @@ const EpisodePage: ({}: Params) => Promise<{}> = async ({ params }) => {
     <div>
       <Navbar />
       <h1>Hot Ones Episodes</h1>
-
-      <div>
-        <h2>{`Season ${episode.seasonNumber}, Episode ${episode.seasonEpisodeNumber} - ${episode.title}`}</h2>
-        <p>Guests: {episode.guests}</p>
-        <p>Air Date: {episode.airDate}</p>
-        {/* <p>Sauces Mentioned: {episode.sauces.join(', ')}</p> */}
+      <div style={{ transition:'.3s', borderRadius:'5px', backgroundColor:'white', width: '35em'}}>
+        <h1 style={{ fontSize:'80px' }}>{episode.title}</h1>
+        <h2 style={{ fontSize:'60px' }}>Season Number: {episode.seasonNumber}</h2>
+        <h2 style={{ fontSize:'60px' }}>Episode Number: {episode.seasonEpisodeNumber}</h2> 
+        <p style={{ fontSize:'20px' }}>Air Date: {episode.airDate}</p>     
       </div>
     </div>
   );
