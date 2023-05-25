@@ -47,6 +47,8 @@ const SaucesGrid = () => {
         const grid = new Grid({
           columns: ["Name", "Scoville", "Manufacturer"],
           data: mappedSauces,
+          sort:true,
+          resizable:true,
         });
 
         if (wrapperRef.current) {

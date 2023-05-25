@@ -1,10 +1,12 @@
 import Navbar from './navbar';
+import Image from 'next/image';
 import styles from './page.module.css';
 import SomeGuestsGrid from './grids/someguests';
 import SomeEpisodesGrid from './grids/someepisodes';
 import SomeSaucesGrid from './grids/somesauces';
 import AboutGrid from './grids/about';
 import FunFactsGrid from './grids/funfacts';
+import Caliente from '../public/Caliente.png';
 
 type Guests = {
   _id: string;
@@ -73,8 +75,19 @@ const Home = async () => {
   return (
     <main className={styles.main}>
       <Navbar />
-      <header className="bg-dark text-light py-6">
-        <h1 className="text-center">Calientes 🌶️: The website with Hot Facts and even Hotter Data</h1>
+      <header className={`${styles.header}`}>
+      <div className={`${styles.headerImage}`}>
+        <Image
+          src="/Caliente.png"
+          alt="Caliente logo that is a pepper breathing fire"
+          width={200}
+          height={200}
+        />
+           </div>
+        <h1 className={`${styles.title}`} style={{ color: 'BLACK' }}>
+          Calientes 🌶️: The website with Hot Facts and even Hotter Data
+        </h1>
+     
       </header>
       <AboutGrid />
       <FunFactsGrid />
@@ -85,7 +98,7 @@ const Home = async () => {
       <footer className="bg-dark text-light py-4">
         <div className="container">
           <p>
-            &copy; {new Date().getFullYear()} Calientes: Hot Ones Fan Site. All
+            &copy; {new Date().getFullYear()} Calientes: Hot Ones API. All
             rights reserved.
           </p>
         </div>

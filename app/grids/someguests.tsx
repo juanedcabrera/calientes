@@ -45,6 +45,8 @@ const SomeGuestsGrid = () => {
         const grid = new Grid({
           columns: ["Name", "Profession"],
           data: mappedGuests,
+          sort:true,
+          resizable:true,
         });
 
         if (wrapperRef.current) {
@@ -54,7 +56,7 @@ const SomeGuestsGrid = () => {
     }
   }, []);
 
-  return <div ref={wrapperRef} />;
+  return <div ref={wrapperRef} className="my-guests" />;
 };
 
 export default SomeGuestsGrid;

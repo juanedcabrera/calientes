@@ -1,5 +1,10 @@
-
-  /* Add mobile-friendly styles */
+.my-guests {
+    background-color: #ffba5b;
+}
+ 
+ 
+ 
+ /* Add mobile-friendly styles */
   
   @media (max-width: 768px) {
     .gridjs-wrapper {

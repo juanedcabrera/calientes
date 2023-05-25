@@ -1,6 +1,8 @@
 'use client'
 import React, { useEffect, useRef } from "react";
 import { Grid } from "gridjs";
+import './grid.module.css';
+import 'gridjs/dist/theme/mermaid.css';
 
 type Guests = {
   _id: string;
@@ -39,6 +41,9 @@ const AllGuestsGrid = () => {
         const grid = new Grid({
           columns: ["Name", "Profession"],
           data: mappedGuests,
+          sort:true,
+          resizable:true,
+          search:true,
         });
 
         if (wrapperRef.current) {

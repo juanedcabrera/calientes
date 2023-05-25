@@ -1,6 +1,8 @@
 'use client'
 import React, { useEffect, useRef } from "react";
 import { Grid } from "gridjs";
+import './grid.module.css';
+import 'gridjs/dist/theme/mermaid.css';
 
 type Sauce = {
     _id: string;
@@ -26,7 +28,7 @@ const getSauces: () => Promise<{ sauces: Sauce[] }> = async () => {
 };
 
 // EpisodesGrid component
-const SaucesGrid = () => {
+const AllSaucesGrid = () => {
   const wrapperRef = useRef<HTMLDivElement | null>(null);
 
   useEffect(() => {
@@ -41,6 +43,9 @@ const SaucesGrid = () => {
         const grid = new Grid({
           columns: ["Name", "Scoville", "Description"],
           data: mappedSauces,
+          sort:true,
+          resizable:true,
+          search:true,
         });
 
         if (wrapperRef.current) {
@@ -53,4 +58,4 @@ const SaucesGrid = () => {
   return <div ref={wrapperRef} />;
 };
 
-export default SaucesGrid;
+export default AllSaucesGrid;
