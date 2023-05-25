@@ -51,11 +51,24 @@ const EpisodePage: ({}: Params) => Promise<{}> = async ({ params }) => {
     <div>
       <Navbar />
       <h1>Hot Ones Episodes</h1>
-      <div style={{ transition:'.3s', borderRadius:'5px', backgroundColor:'white', width: '35em'}}>
-        <h1 style={{ fontSize:'80px' }}>{episode.title}</h1>
-        <h2 style={{ fontSize:'60px' }}>Season Number: {episode.seasonNumber}</h2>
-        <h2 style={{ fontSize:'60px' }}>Episode Number: {episode.seasonEpisodeNumber}</h2> 
-        <p style={{ fontSize:'20px' }}>Air Date: {episode.airDate}</p>     
+      <div
+        style={{
+          transition: '.3s',
+          borderRadius: '5px',
+          backgroundColor: 'white',
+          width: '35em',
+        }}
+      >
+        <h1 style={{ fontSize: '80px' }}>{episode.title}</h1>
+        <h2 style={{ fontSize: '60px' }}>
+          Season Number: {episode.seasonNumber}
+        </h2>
+        <h2 style={{ fontSize: '60px' }}>
+          Episode Number: {episode.seasonEpisodeNumber}
+        </h2>
+        <p style={{ fontSize: '20px' }}>
+          Air Date: {episode.airDate.slice(0, -14)}
+        </p>
       </div>
     </div>
   );

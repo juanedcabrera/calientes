@@ -42,6 +42,14 @@ const GuestPage: ({}: Params) => Promise<{}> = async ({ params }) => {
 
   const guest = await getGuest();
   
+  const episodeDates = guest.episodeDates.map((date, index) => {
+    if (index === guest.episodeDates.length - 1) {
+      return date.slice(0, -14)
+    } else {
+      return date.slice(0, -14) + ", "
+    }
+  })
+
   return (
     <div>
       <Navbar />
@@ -49,7 +57,7 @@ const GuestPage: ({}: Params) => Promise<{}> = async ({ params }) => {
         <h1 style={{ fontSize:'100px' }}>{guest.name}</h1>
         <h2 style={{ fontSize:'60px' }}>{guest.profession}</h2>
         <p>{guest.episodes}</p>
-        <p style={{ fontSize:'20px' }}>Episode Dates: {guest.episodeDates}</p>
+        <p style={{ fontSize:'20px' }}>Episode Dates: {episodeDates}</p>
         <p style={{ fontSize:'20px' }}>Total Wings Eaten: {guest.totalWingsEaten}</p>     
       </div>
     </div>
