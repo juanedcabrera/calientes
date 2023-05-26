@@ -1,7 +1,7 @@
 'use client'
 
 import React, { useEffect, useRef } from 'react';
-import { Grid } from 'gridjs';
+import { Grid, html } from 'gridjs';
 import './grid.module.css';
 import 'gridjs/dist/theme/mermaid.css';
 
@@ -45,8 +45,8 @@ const EpisodesGrid = () => {
     if (wrapperRef.current) {
       getEpisodes().then(({ episodes }) => {
         const mappedEpisodes = episodes.map((episode) => [
-          episode.title,
-          episode.seasonNumber,
+          html(`<a href="episodes/${episode._id}">${episode.title}</a>`),
+          html(`<a href="seasons/${episode.seasonId}">${episode.seasonNumber}</a>`),
           episode.seasonEpisodeNumber,
         ]);
 

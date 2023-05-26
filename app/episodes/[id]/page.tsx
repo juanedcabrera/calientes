@@ -67,7 +67,7 @@ const EpisodePage: ({}: Params) => Promise<{}> = async ({ params }) => {
           Episode Number: {episode.seasonEpisodeNumber}
         </h2>
         <p style={{ fontSize: '20px', padding:'10px' }}>
-          Air Date: {episode.airDate.slice(0, -14)}
+        Air Date: {new Date(episode.airDate).toLocaleDateString('en-US')}
         </p>
       </div>
     </div>
