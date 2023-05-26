@@ -16,24 +16,6 @@ type Season = {
   updatedAt: string;
 };
 
-type Episode = {
-  _id: string;
-  title: string;
-  seasonNumber: number;
-  seasonId: string;
-  overallEpisodeNumber: string;
-  seasonEpisodeNumber: string;
-  airDate: string;
-  guests: string[];
-  sauces: string[];
-  success: boolean;
-  guestDab: boolean;
-  likes: number;
-  carefulCount: number;
-  createdAt: string;
-  updatedAt: string;
-};
-
 // asynchronous function to fetch episodes
 const getSeasons: () => Promise<{ seasons: Season[] }> = async () => {
   const res = await fetch(`${process.env.REACT_APP_SERVER_URL}/api-v1/seasons`);
@@ -44,15 +26,7 @@ const getSeasons: () => Promise<{ seasons: Season[] }> = async () => {
   return res.json();
 };
 
-// asynchronous function to fetch episodes
-const getEpisodes = async (): Promise<{ episodes: Episode[] }> => {
-  const res = await fetch(`${process.env.REACT_APP_SERVER_URL}/api-v1/episodes`);
-  if (!res.ok) {
-    // This will activate the closest `error.js` Error Boundary
-    throw new Error('Failed to fetch data');
-  }
-  return res.json();
-};
+
 
 // EpisodesGrid component
 const AllSeasonsGrid = () => {
@@ -61,23 +35,31 @@ const AllSeasonsGrid = () => {
   useEffect(() => {
     if (wrapperRef.current) {
       getSeasons().then(({ seasons }) => {
-        const gridData = seasons.map((season) => [
-          html(`<a href="seasons/${season._id}">${season.seasonNumber}</a>`),
-          html(season.episodeTitles.join('<br>')),
-        ]);
-  
+        const gridData = seasons.map((season) => {
+          const episodes = season.episodeTitles.map((title, index) => {
+            const episodeId = season.episodeIds[index]; // This will get the corresponding episode ID 
+            return `<a href="episodes/${episodeId}">${title}</a>`;
+          });
+
+          return [
+            html(`<a href="seasons/${season._id}">${season.seasonNumber}</a>`),
+            html(episodes.join('<br>')),
+          ];
+        });
+
         const grid = new Grid({
           columns: ['Season', 'Episodes'],
           data: gridData,
           search: true,
         });
-  
+
         if (wrapperRef.current) {
           grid.render(wrapperRef.current);
         }
       });
     }
   }, []);
+
 
   return <div ref={wrapperRef} />;
 };
