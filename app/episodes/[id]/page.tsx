@@ -59,14 +59,14 @@ const EpisodePage: ({}: Params) => Promise<{}> = async ({ params }) => {
           width: '35em',
         }}
       >
-        <h1 style={{ fontSize: '80px' }}>{episode.title}</h1>
-        <h2 style={{ fontSize: '60px' }}>
+        <h1 style={{ fontSize: '80px', padding:'10px' }}>{episode.title}</h1>
+        <h2 style={{ fontSize: '60px', padding:'10px' }}>
           Season Number: {episode.seasonNumber}
         </h2>
-        <h2 style={{ fontSize: '60px' }}>
+        <h2 style={{ fontSize: '60px', padding:'10px' }}>
           Episode Number: {episode.seasonEpisodeNumber}
         </h2>
-        <p style={{ fontSize: '20px' }}>
+        <p style={{ fontSize: '20px', padding:'10px' }}>
           Air Date: {episode.airDate.slice(0, -14)}
         </p>
       </div>
