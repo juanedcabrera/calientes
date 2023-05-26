@@ -37,6 +37,10 @@ const Home = async () => {
             officially associated with Complex, First We Feast, or Hot Ones. All
             rights reserved.
           </p>
+          <p>
+            Background chicken wings brought to you by: 
+            <a href="https://www.vecteezy.com/free-vector/chicken-wings">Vecteezy</a>
+          </p>
         </div>
       </footer>
     </main>
