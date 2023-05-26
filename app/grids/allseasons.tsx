@@ -61,27 +61,17 @@ const AllSeasonsGrid = () => {
   useEffect(() => {
     if (wrapperRef.current) {
       getSeasons().then(({ seasons }) => {
-        const mappedSeasons = seasons.map((season) => [
-          season.seasonNumber,
-          season.startDate,
-          season.endDate,
-          season.episodeTitles,
-          season._id,
+        const gridData = seasons.map((season) => [
+          html(`<a href="seasons/${season._id}">${season.seasonNumber}</a>`),
+          html(season.episodeTitles.join('<br>')),
         ]);
-
+  
         const grid = new Grid({
-          columns: ['Season', 'Start Date', 'End Date', 'Episodes'],
-          data: mappedSeasons.map((season) => [
-            html(`<a href="seasons/${season[4]}">${season[0]}</a>`),
-            season[1],
-            season[2],
-            season[3],
-          ]),
-          sort: true,
-          resizable: true,
+          columns: ['Season', 'Episodes'],
+          data: gridData,
           search: true,
         });
-
+  
         if (wrapperRef.current) {
           grid.render(wrapperRef.current);
         }

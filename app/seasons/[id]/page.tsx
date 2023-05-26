@@ -39,13 +39,13 @@ const SeasonPage: ({}: Params) => Promise<{}> = async ({ params }) => {
   return (
     <div>
       <Navbar />
-      <div style={{ transition:'.3s', borderRadius:'5px', backgroundColor:'white', width: '35em'}}>
-      <h1 style={{ fontSize: '80px' }}>Hot Ones {season.seasonNumber}</h1>
-      <p style={{ fontSize: '20px' }}>Start Date: {season.startDate}</p>
-      <p style={{ fontSize: '20px' }}>End Date: {season.endDate}</p>
-      <h2 style={{ fontSize: '60px' }}>Episodes: </h2>
+      <div style={{ transition:'.3s', borderRadius:'5px', backgroundColor:'white', width: '55em'}}>
+      <h1 style={{ fontSize: '80px', padding:'10px' }}>Hot Ones Season: {season.seasonNumber}</h1>
+      <p style={{ fontSize: '20px', padding:'10px' }}>Start Date: {season.startDate}</p>
+      <p style={{ fontSize: '20px', padding:'10px' }}>End Date: {season.endDate}</p>
+      <h2 style={{ fontSize: '60px', padding:'10px' }}>Episodes: </h2>
       {season.episodeTitles.map((episode, index) => (
-        <p style={{ fontSize: '20px' }} key={index}>{episode}</p>
+        <p style={{ fontSize: '20px', padding:'10px' }} key={index}>{episode}</p>
       ))}
       </div>
     </div>
