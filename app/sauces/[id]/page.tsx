@@ -23,7 +23,7 @@ type Params = {
 const SaucePage: ({}: Params) => Promise<{}> = async ({ params }) => {
   const getSauce: () => Promise<Sauce> = async () => {
     const res = await fetch(
-      `http://localhost:8000/api-v1/sauces/${params.id}`,
+      `${process.env.REACT_APP_SERVER_URL}/api-v1/sauces/${params.id}`,
       {
         // needs to be removed (or changed) before final publication -- only currently implemented so that we're not constantly getting cached results when trying to test changes
         next: { revalidate: 0 },

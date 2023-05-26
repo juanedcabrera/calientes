@@ -22,7 +22,9 @@ function getRandomGuests(guests: Guest[], count: number) {
 }
 
 const getGuests: () => Promise<{ guests: Guest[] }> = async () => {
-  const res = await fetch('http://localhost:8000/api-v1/guests');
+  const res = await fetch(
+    `${process.env.REACT_APP_SERVER_URL}/api-v1/guests`
+  );
   if (!res.ok) {
     // This will activate the closest `error.js` Error Boundary
     throw new Error('Failed to fetch data');

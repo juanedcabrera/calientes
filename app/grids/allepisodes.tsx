@@ -29,7 +29,7 @@ type Episode = {
 
 // asynchronous function to fetch episodes
 const getEpisodes = async (): Promise<{ episodes: Episode[] }> => {
-  const res = await fetch('http://localhost:8000/api-v1/episodes');
+  const res = await fetch(`${process.env.REACT_APP_SERVER_URL}/api-v1/episodes`);
   if (!res.ok) {
     // This will activate the closest `error.js` Error Boundary
     throw new Error('Failed to fetch data');

@@ -1,4 +1,8 @@
 /** @type {import('next').NextConfig} */
-const nextConfig = {}
+const nextConfig = {
+  env: {
+    REACT_APP_SERVER_URL: process.env.REACT_APP_SERVER_URL,
+  },
+};
 
-module.exports = nextConfig
+module.exports = nextConfig;
