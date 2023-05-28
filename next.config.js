@@ -8,6 +8,18 @@ const nextConfig = {
         port: '',
         pathname: '/vi/**',
       },
+      {
+        protocol: 'https',
+        hostname: 'www.meijer.com',
+        port: '',
+        pathname: '**',
+      },
+      {
+        protocol: 'https',
+        hostname: 'cdn.shopify.com',
+        port: '',
+        pathname: '',
+      },
     ],
   },
   env: {

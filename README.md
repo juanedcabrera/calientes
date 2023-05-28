@@ -88,7 +88,7 @@ Mongoose as our ODM
 
 - Implement cool charts/data visualizations through Javascript/HTML/CSS
 
-- Make a open source API that other websites could ping for information
+- Make an open source API that other websites could ping for information
 
 - Integrate a social media share button so people could share the pages with their friends
 
