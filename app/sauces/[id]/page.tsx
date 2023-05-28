@@ -1,4 +1,5 @@
 import Navbar from '../../navbar';
+import Image from 'next/image';
 
 type Sauce = {
   _id: string;
@@ -43,6 +44,7 @@ const SaucePage: ({}: Params) => Promise<{}> = async ({ params }) => {
       <Navbar />
       <div style={{ transition:'.3s', borderRadius:'5px', backgroundColor:'white', width: '35em'}}>
         <h1 style={{ fontSize:'80px', padding:'10px'}}>{sauce.name}</h1>
+        <Image src={sauce.img} alt="sauce image" width={400} height={200} />
         <h3 style={{ fontSize:'20px', padding:'10px' }}>Manufacturer: {sauce.manufacturer}</h3>
         <p style={{ fontSize:'20px', padding:'10px', fontWeight:'bold' }}>Scoville: {sauce.scoville}</p>    
         <p style={{ fontSize:'20px', padding:'10px'}}>Description: {sauce.description}</p>     

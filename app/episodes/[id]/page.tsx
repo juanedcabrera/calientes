@@ -1,5 +1,6 @@
 import Navbar from '../../navbar';
 import style from './page.module.css';
+import Image from 'next/image';
 
 type Episode = {
   _id: string;
@@ -66,6 +67,9 @@ const EpisodePage: ({}: Params) => Promise<{}> = async ({ params }) => {
         <h2 style={{ fontSize: '60px', padding:'10px' }}>
           Episode Number: {episode.seasonEpisodeNumber}
         </h2>
+       
+        <Image src={episode.image} alt="episode image" width={400} height={200} />
+   
         <p style={{ fontSize: '20px', padding:'10px' }}>
         Air Date: {new Date(episode.airDate).toLocaleDateString('en-US')}
         </p>
