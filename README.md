@@ -10,8 +10,6 @@ Prepare your palette for the world of Hot Sauces. Discover the feverous lineup o
 
 But as always make sure to keep your hands away from your eyes as you feast on the Statistics provided by the site. We'll dive into the numbers while provided a sleek user-friendly interface to ensure all Hot Ones enthusiasts will have a stool to site on and a napkin in case. 
 
-
-
 ## Tech Stack
 
 **Client:** 
@@ -45,6 +43,9 @@ Mongoose as our ODM
 <img src="./assets/1.jpg" alt="The landing page for Calientes App" title="Landing Page">
 <img src="./assets/2.jpg" alt="Seasons page showing all episodes and relevant info" title="Seasons Page">
 <img src="./assets/3.jpg" alt="Guest page showing the details of that guest" title="Guest Page">
+
+## Screenshots
+![Homepage](./assets/homepage.png)
 
 ## RESTful API Routes
 
