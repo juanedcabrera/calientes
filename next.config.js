@@ -10,199 +10,133 @@ const nextConfig = {
       },
       {
         protocol: 'https',
-        hostname: 'www.meijer.com',
-        port: '',
-        pathname: '**',
+        hostname: 'adoboloco.com',
+      },
+      {
+        protocol: 'https',
+        hostname: 'asskickin-giftshop.com',
       },
       {
         protocol: 'https',
         hostname: 'cdn.shopify.com',
-        port: '',
-        pathname: '',
-      },
-      {
-        protocol: 'https',
-        hostname: 'www.peppersofkeywest.com',
-        port: '',
-        pathname: '',
-      },
-      {
-        protocol: 'https',
-        hostname: 'www.foodservicedirect.com',
-        port: '',
-        pathname: '',
-      },
-      {
-        protocol: 'https',
-        hostname: 'm.media-amazon.com',
-        port: '',
-        pathname: '',
-      },
-      {
-        protocol: 'https',
-        hostname: 'hotsaucemall.com',
-        port: '',
-        pathname: '',
       },
       {
         protocol: 'https',
         hostname: 'cdn11.bigcommerce.com',
-        port: '',
-        pathname: '',
-      },
-      {
-        protocol: 'https',
-        hostname: 'www.hot-chili-sauce.com',
-        port: '',
-        pathname: '',
-      },
-      {
-        protocol: 'https',
-        hostname: 'i.pinimg.com',
-        port: '',
-        pathname: '',
-      },
-      {
-        protocol: 'https',
-        hostname: 'louisianahotsauce.com',
-        port: '',
-        pathname: '',
-      },
-      {
-        protocol: 'https',
-        hostname: 'smallaxepeppers.com',
-        port: '',
-        pathname: '',
-      },
-      {
-        protocol: 'https',
-        hostname: 'adoboloco.com',
-        port: '',
-        pathname: '',
-      },
-      {
-        protocol: 'https',
-        hostname: 'i5.peapod.com',
-        port: '',
-        pathname: '',
-      },
-      {
-        protocol: 'https',
-        hostname: 'www.torchbearersauces.com',
-        port: '',
-        pathname: '',
-      },
-      {
-        protocol: 'https',
-        hostname: 'www.hot-chili-sauce.com',
-        port: '',
-        pathname: '',
-      },
-      {
-        protocol: 'https',
-        hostname: 'hotsaucefever.com',
-        port: '',
-        pathname: '',
-      },
-      {
-        protocol: 'https',
-        hostname: 'www.heatsupply.nl',
-        port: '',
-        pathname: '',
       },
       {
         protocol: 'https',
         hostname: 'fartleyfarms.com',
-        port: '',
-        pathname: '',
-      },
-      {
-        protocol: 'https',
-        hostname: 'www.olbrygging.no',
-        port: '',
-        pathname: '',
-      },
-      {
-        protocol: 'https',
-        hostname: 'goodiegonewild.com',
-        port: '',
-        pathname: '',
-      },
-      {
-        protocol: 'https',
-        hostname: 'leagueoffire.com',
-        port: '',
-        pathname: '',
-      },
-      {
-        protocol: 'https',
-        hostname: 'www.olbrygging.no',
-        port: '',
-        pathname: '',
-      },
-      {
-        protocol: 'https',
-        hostname: 'i5.walmartimages.com',
-        port: '',
-        pathname: '',
-      },
-      {
-        protocol: 'https',
-        hostname: 'www.saucespiquantes.ca',
-        port: '',
-        pathname: '',
-      },
-      {
-        protocol: 'https',
-        hostname: 'www.chilisauser.no',
-        port: '',
-        pathname: '',
-      },
-      {
-        protocol: 'https',
-        hostname: 'images.squarespace-cdn.com',
-        port: '',
-        pathname: '',
-      },
-      {
-        protocol: 'https',
-        hostname: 'www.saucempiquantes.ca',
-        port: '',
-        pathname: '',
       },
       {
         protocol: 'https',
         hostname: 'flowercityflavor.com',
-        port: '',
-        pathname: '',
       },
       {
         protocol: 'https',
-        hostname: 'www.asskickin-giftshop.com',
-        port: '',
-        pathname: '',
+        hostname: 'goodiesgonewild.com',
+      },
+      {
+        protocol: 'https',
+        hostname: 'heatonist.com',
+      },
+      {
+        protocol: 'https',
+        hostname: 'hotsaucefever.com',
+      },
+      {
+        protocol: 'https',
+        hostname: 'hotsaucefindr.b-cdn.net',
+      },
+      {
+        protocol: 'https',
+        hostname: 'hotsaucemall.com',
+      },
+      {
+        protocol: 'https',
+        hostname: 'i.pinimg.com',
+      },
+      {
+        protocol: 'https',
+        hostname: 'i5.peapod.com',
+      },
+      {
+        protocol: 'https',
+        hostname: 'i5.walmartimages.com',
+      },
+      {
+        protocol: 'https',
+        hostname: 'images.squarespace-cdn.com',
+      },
+      {
+        protocol: 'https',
+        hostname: 'leagueoffire.com',
+      },
+      {
+        protocol: 'https',
+        hostname: 'louisianahotsauce.com',
+      },
+      {
+        protocol: 'https',
+        hostname: 'm.media-amazon.com',
+      },
+      {
+        protocol: 'https',
+        hostname: 's3.amazonaws.com',
       },
       {
         protocol: 'https',
         hostname: 'shop.tabasco.com',
-        port: '',
-        pathname: '',
       },
       {
         protocol: 'https',
         hostname: 'shortyawards.imgix.net',
-        port: '',
-        pathname: '',
       },
-
-
+      {
+        protocol: 'https',
+        hostname: 'smallaxepeppers.com',
+      },
+      {
+        protocol: 'https',
+        hostname: 'www.chilisauser.no',
+      },
+      {
+        protocol: 'https',
+        hostname: 'www.foodservicedirect.com',
+      },
+      {
+        protocol: 'https',
+        hostname: 'www.heatsupply.nl',
+      },
+      {
+        protocol: 'https',
+        hostname: 'www.hot-chili-sauce.com',
+      },
+      {
+        protocol: 'https',
+        hostname: 'www.meijer.com',
+      },
+      {
+        protocol: 'https',
+        hostname: 'www.olbrygging.no',
+      },
+      {
+        protocol: 'https',
+        hostname: 'www.peppersofkeywest.com',
+      },
+      {
+        protocol: 'https',
+        hostname: 'www.saucespiquantes.ca',
+      },
+      {
+        protocol: 'https',
+        hostname: 'www.torchbearersauces.com',
+      },
     ],
   },
   env: {
     REACT_APP_SERVER_URL: process.env.REACT_APP_SERVER_URL,
   },
 };
-
-
 
 module.exports = nextConfig;
